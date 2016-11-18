@@ -19,8 +19,9 @@ if (isset($_REQUEST['authcode'])) {
 </head>
 <body>
 <form method="post" action="./form.php">
-  <p>验证码图片：<img border="1" src="./captcha.php?r=<?php echo rand() ?>" width="100px" height="30px" alt=""></p>
-
+  <p>验证码图片：<img id="captcha_img" border="1" src="./captcha.php?r=<?php echo rand() ?>" width="100px" height="30px" alt="">
+    <a href="javascript:void(0)" onclick="document.getElementById('captcha_img').src='./captcha.php?r='+Math.random()">看不清，换一个</a>
+  </p>
   <p>请输入图片中的内容：<input type="text" name="authcode" value=""></p>
   <p><input type="submit" value="提交" style="padding:6px 20px;"></p>
 </form>
